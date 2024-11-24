@@ -1,0 +1,98 @@
+/* General Styles */
+body {
+    background: linear-gradient(135deg, #48C9B0, #58D68D);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1 {
+    color: #ffffff;
+    text-align: center;
+    margin-top: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Form Container */
+  .container {
+    max-width: 500px;
+    margin: 20px auto;
+    background: #ffffff;
+    padding: 10px 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .container h1 {
+    color: #34495E;
+    margin-top: 0px;
+  }
+  
+  /* Form Inputs */
+  .form-label {
+    color: #34495E;
+    font-weight: 600;
+    font-size: 1rem;
+    padding-top: 10px;
+  }
+ 
+  
+  .form-control {
+    border-radius: 8px;
+    border: 1px solid #ccd1d1;
+    padding: 10px;
+    font-size: 1rem;
+  }
+  
+  .form-control:focus {
+    border-color: #48C9B0;
+    box-shadow: 0 0 5px rgba(72, 201, 176, 0.5);
+  }
+  
+  /* Alerts */
+  .alert {
+    font-size: 0.85rem;
+    margin-top: 5px;
+  }
+  
+  /* Sign-Up Button */
+  button {
+    background-color: #48C9B0;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  button:hover {
+    background-color: #1ABC9C;
+    transform: scale(1.02);
+  }
+  
+  /* Link to Sign-In */
+  a {
+    text-decoration: none;
+    color: #48C9B0;
+    font-weight: 600;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 576px) {
+    .container {
+      padding: 30px 15px;
+    }
+  
+    button {
+      font-size: 0.9rem;
+    }
+  }
+  

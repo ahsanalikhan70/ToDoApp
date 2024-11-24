@@ -1,0 +1,41 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+#app {
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+#task-list {
+    list-style: none;
+    padding: 0;
+}
+
+#task-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+
+#task-list li button {
+    background-color: #e71303;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+#task-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+button{
+    margin-left: 140px;
+}

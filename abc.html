@@ -1,0 +1,87 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign In</title>
+
+  <!-- linked css with bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+
+  <!-- link javascript with bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+
+  <!-- linking seet alters -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+  <!-- linking with css file -->
+  <link rel="stylesheet" href="./style.css">
+
+
+</head>
+
+<body>
+  <h1 class="text-center">ToDo Application</h1>
+
+  <!-- Signin UI Start -->
+  <div class="container col">
+    <!-- heading  -->
+    <h1 class="mt-5 text-center">Sign In</h1>
+
+    <!-- signin form to recieve data from user -->
+    <form class="container my-5">
+
+      <!-- email address -->
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Username</label>
+        <input type="email" class="form-control" placeholder="example@mail.com" id="exampleInputEmail1"
+          aria-describedby="emailHelp" />
+        <div id="emailHelp" class="form-text">
+          We'll never share your username with anyone else.
+        </div>
+        <div class="alert alert-warning alert-dismissible fade show" role="alert" style="display: none;"
+          id="signinUsernameAlert">
+          (Username not found!)
+        </div>
+
+      </div>
+
+      <!-- password -->
+      <div class="mb-3 ">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="password" placeholder="*********" class="form-control" id="exampleInputPassword1" />
+      </div>
+      <div class="alert alert-warning alert-dismissible fade show" role="alert" style="display: none;"
+        id="signinPasswordAlert">
+        (Password not found!)
+      </div>
+
+      <!-- sign up button -->
+      <div class="mb-3">
+        Don't have an account? Click here to
+        <a href="./sign up/signup.html"><strong>Sign Up</strong></a>
+      </div>
+
+
+      <!-- sign in button in a tag to stop refreshing page -->
+      <button href="" type="button" onclick="signIn()" class="btn btn-primary">Sign In</button>
+
+
+
+      <!-- form end -->
+  </div>
+  <!-- sign in data end -->
+
+  <!-- loading the js file -->
+  <script src="./script.js"></script>
+</body>
+
+</html>
+
+

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Improved Dashboard</title>
+
+    <!-- Custom fonts -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Custom styles -->
+    <link href="./css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Sweet Alerts -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: #f8f9fc;
+            color: #343a40;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-top: 20px;
+            color: #4e73df;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, #48C9B0, #58D68D) !important;
+            color: #fff;
+        }
+
+        .navbar .btn-primary {
+            background: #2e59d9 !important;
+            border: none;
+        }
+
+        .container {
+            margin: 20px auto;
+            max-width: 600px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .todo-form {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        #todo-input {
+            flex: 1;
+            padding: 10px;
+            border: 2px solid #4e73df;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        #addButton {
+            background-color: #2e59d9;
+            border: none;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #addButton:hover {
+            background-color: #2c4ba8;
+        }
+
+        #todo-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        #todo-list li {
+            padding: 10px;
+            margin: 5px 0;
+            background-color: #f1f1f1;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        #todo-list li:hover {
+            background-color: #e2e6ea;
+        }
+
+        .todo-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .todo-actions button {
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            color: #4e73df;
+        }
+
+        .todo-actions button:hover {
+            color: #2e59d9;
+        }
+    </style>
+</head>
+
+<body id="page-top">
+    <nav class="navbar navbar-expand navbar-light topbar mb-4 static-top shadow">
+        <a class="navbar-brand text-white" href="#">Dashboard</a>
+        <a href="../index.html" class="btn btn-primary ml-auto">Sign Out</a>
+    </nav>
+
+    <div class="container">
+        <h1 class="text-center">Todo Application</h1>
+
+        <div class="todo-form text-center">
+            <input type="text" id="todo-input" placeholder="Add a Todo..." aria-label="Todo">
+            <button id="addButton" onclick="addTodo()">Add</button>
+        </div>
+
+        <ul id="todo-list"></ul>
+    </div>
+
+    <footer class="text-center mt-4">
+        <p>&copy; 2024 Dashboard. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="./script.js"></script>
+    <script>
+        function addTodo() {
+            const input = document.getElementById('todo-input');
+            const todoList = document.getElementById('todo-list');
+
+            if (input.value.trim() === '') {
+                Swal.fire('Error', 'Please enter a todo item!', 'error');
+                return;
+            }
+
+            const li = document.createElement('li');
+            li.innerHTML = `
+                <span>${input.value}</span>
+                <div class="todo-actions">
+                    <button onclick="deleteTodo(this)"><i class="fas fa-trash"></i></button>
+                    <button onclick="markComplete(this)"><i class="fas fa-check"></i></button>
+                </div>
+            `;
+
+            todoList.appendChild(li);
+            input.value = '';
+        }
+
+        function deleteTodo(button) {
+            const li = button.parentElement.parentElement;
+            li.remove();
+            Swal.fire('Deleted', 'Todo item removed!', 'success');
+        }
+
+        function markComplete(button) {
+            const li = button.parentElement.parentElement;
+            li.style.textDecoration = 'line-through';
+            Swal.fire('Completed', 'Great job completing the task!', 'success');
+        }
+    </script>
+</body>
+
+</html>
